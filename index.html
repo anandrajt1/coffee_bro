@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+
+
+    <title>coffeeBro</title>
+</head>
+
+<body>
+    <!-- HEADER STARTS HERE-->
+    <header class="flex flex-row h-20 justify-between items-center bg-orange-500 p-4  ">
+        <span class="font-bold   text-2xl md:text-3xl cursor-pointer">CoffeeBro ☕</span>
+        <div class="flex flex-row justify-center items-center gap-8 px-4">
+            <div class=" light off w-5 h-5 rounded-full" id="light">
+                &nbsp;
+            </div>
+            <button class="w-10 h-10 flex flex-row justify-center items-center bg-orange-700 hover:bg-orange-900  rounded-md  "
+                id="powerBtn">
+                <img class="w-8 h-8" src="./images/power_settings_new_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            </button>
+        </div>
+    </header>
+    <!-- HEADER ENDS HERE -->
+
+
+
+    <!-- BODY STARTS HERE -->
+    <main>
+<!-- INPUT FORM -->
+        <div class="max-w-screen-xl mx-auto mt-10 p-2 flex flex-col gap-6 md:grid grid-cols-3  ">
+            
+               <form id="milkForm" action="">
+                <div class="flex flex-col gap-3 bg-green-400 p-4 rounded-xl">
+                    <label class="font-semibold" for="milkInput">Milk:</label>
+                    <input placeholder="Enter the amount of milk(in ml)" id="milkInput" type="number">
+                    <button class="bg-blue-500 rounded-lg px-6 py-2 text-sm font-medium hover:bg-blue-800 hover:text-white  w-1/2 mx-auto" type="submit">Add Milk</button>
+                </div>
+               </form>
+
+               <form id="powderForm" action="">
+                <div class="flex flex-col gap-3  bg-green-400 p-4 rounded-xl ">
+
+                    <label class="font-semibold" for="powderInput">Coffee Powder:</label>
+                    <input placeholder="Enter the amount of coffee powder(in gm)"  id="powderInput" type="number">
+                    <button class="bg-blue-500 rounded-lg px-6 py-2 text-sm font-medium hover:bg-blue-800 hover:text-white  w-1/2 mx-auto" type="submit">Add Powder</button>
+                </div>
+               </form>
+
+               <form id="sugarForm" action="">
+                <div class="flex flex-col gap-3  bg-green-400 p-4 rounded-xl">
+
+                    <label class="font-semibold" for="sugarInput">Sugar:</label>
+                    <input placeholder="Enter the amount of sugar(in gm)"  id="sugarInput" type="number">
+                    <button class="bg-blue-500 rounded-lg px-6 py-2 text-sm font-medium hover:bg-blue-800 hover:text-white  w-1/2 mx-auto" type="submit">Add Sugar</button>
+                </div>
+               </form>
+            
+
+                
+                
+            
+        </div>
+
+        <!-- DATA TABLES -->
+
+        <div class="max-w-screen-xl mx-auto p-3 mt-12 h-32">
+            
+                <div class="flex justify-between items-center">
+                    <h2 class="font-bold text-3xl mb-4">Current Values:</h2>
+                    <button id="resetBtn" class="bg-orange-600 rounded-lg px-6 py-2 text-lg hover:bg-orange-400 font-medium">Reset</button>
+                </div>
+            
+            <table class="p-6 w-full h-full border-solid border-2 border-gray-600 ">
+                <tr class="p-3 h-1/2">
+                   <th>Milk</th>
+                   <th>Powder</th>
+                   <th>Sugar</th>
+                </tr>
+
+                <tr class="p-3 h-1/2">
+                    <td id="milkQty" class="text-center">0</td>
+                    <td id="powderQty" class="text-center">0</td>
+                    <td id="sugarQty" class="text-center">0</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CONTROLS -->
+
+        <div class="max-w-screen-xl mx-auto p-3 mt-24  flex justify-center">
+            <!-- BREW BUTTON -->
+            <button id="brew-btn" class="bg-gray-900 text-white  rounded-lg px-6 py-2 text-sm font-medium hover:bg-gray-800 ">Brew Coffee ☕</button>
+        </div>
+
+        <!-- ERROR -->
+        <div id="errorDiv" class="error-div hidden">
+            <span>Error: <span id="errorIngredient">Sugar</span> not enough !</span>
+        </div>
+
+        <!-- COFFEE MADE -->
+        <div class="flex flex-col justify-center items-center enjoycoffeeDiv hidden" id="coffeeMade">
+            <h2 class="text-4xl">☕</h2>
+            <h3 class="text-xl font-semibold ">Enjoy your Coffee..</h3>
+        </div>
+
+
+    </main>
+    <!-- BODY ENDS HERE -->
+
+
+    <script type="module" src="./controller.js"></script>
+</body>
+
+</html>
